@@ -1,0 +1,9 @@
+#include <iostream> //libreria para manejar mensajes cout y cin
+
+using namespace std; // Maneja la salida y la entrada standard 
+
+int main()  // Inicio del algoritmo 
+{
+    std::cout<<"Hola Mundo";
+    return 0; // No devuelve nada 
+}
