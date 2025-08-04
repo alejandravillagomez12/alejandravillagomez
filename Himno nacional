@@ -1,0 +1,10 @@
+#include <iostream> // Libreria para manejar mensajes cout y cin 
+using namespace std; // Maneja la salida y entrada standard 
+int main() 
+{
+    std::cout<< "Bolivianios el hado propicio" << std::endl;
+    std::cout<< "corono nuestros votos y anhelo" << std::endl;
+    std::cout<< "es ya libre, ya libre este suelo" << std::endl;
+    std::cout<< "ya ceso su servil condicion " << std::endl;
+    return 0;
+}  
