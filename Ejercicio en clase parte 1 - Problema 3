@@ -1,0 +1,20 @@
+Algoritmo calculadoradenotafinal
+		Escribir "escribe la nota de tu primer parcial: "
+		Leer A
+		Escribir "escribe la nota de tu segundo parcial: "
+		Leer B
+		Escribir "escribe la nota de tu tercer parcial: "
+		Leer C
+		D <- ((A+B+C)/3)*0.4
+		Escribir "tu nota ponderada de parciales es: " ,D
+		Escribir "ingresa la nota de tu examen final: "
+		Leer E
+		F <- E*0.4
+		Escribir "la nota ponderada de tu examen final es: " ,F
+		Escribir "ingresa la nota del proyecto final: "
+		Leer G
+		H <- G*0.2
+		Escribir "la nota ponderada del proyecto es: " ,H
+		I <- D+F+H
+		Escribir "tu nota final de semestre es: " ,I
+FinAlgoritmo
