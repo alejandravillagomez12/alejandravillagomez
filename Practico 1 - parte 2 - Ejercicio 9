@@ -1,0 +1,19 @@
+#include <iostream>
+#include "math.h"
+using namespace std;
+int main()
+{
+    
+    //Declaro variables en c++ 
+    int S,H,R,M,E;
+    
+    cout<< "Ingrese el tiempo en segundos: ";
+    cin>> S;
+    H= S/3600 ;
+    R= S % 3600;
+    M= R/60;
+    E= R % 60;
+    cout<<"Los "<<S<< " equivale a "<<H<<":"<<M<<":"<<E;
+    
+    return 0;
+}
