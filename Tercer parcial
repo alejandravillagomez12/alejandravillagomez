@@ -1,0 +1,109 @@
+#include <iostream>
+#include <cmath>
+#include <limits>
+using namespace std;
+
+void ejercicio1();
+void ejercicio2();
+void ejercicio3();
+double distancia(double x1, double y1, double x2, double y2);
+
+int main() {
+    int opcion;
+
+    do {
+        cout << " MENU PRINCIPAL\n";
+        cout << "1. Suma de N impares\n";
+        cout << "2. Distancia entre dos puntos\n";
+        cout << "3. Analisis de notas\n";
+        cout << "4. Salir\n";
+        cout << "Elige una opcion: ";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1: ejercicio1(); break;
+            case 2: ejercicio2(); break;
+            case 3: ejercicio3(); break;
+            case 4: cout << "Saliendo...\n"; break;
+            default: cout << "Opcion invalida.\n";
+        }
+
+    } while (opcion != 4);
+
+    return 0;
+}
+
+void ejercicio1() {
+    int N;
+    cout << "\n=== EJERCICIO 1: Suma de N primeros impares ===\n";
+    cout << "Ingresa N: ";
+    cin >> N;
+
+    if (N <= 0) {
+        cout << "N debe ser mayor que 0.\n";
+        return;
+    }
+
+    int suma = 0;
+    for (int i = 0; i < N; i++) {
+        int impar = 2 * i + 1;
+        suma += impar;
+    }
+
+    cout << "La suma de los " << N << " primeros impares es: " << suma << "\n";
+}
+
+double distancia(double x1, double y1, double x2, double y2) {
+    return sqrt((x1 - x2)*(x1 - x2) + (y1 - y2)*(y1 - y2));
+}
+
+void ejercicio2() {
+    double x1, y1, x2, y2;
+
+    cout << "\n=== EJERCICIO 2: Distancia entre dos puntos ===\n";
+    cout << "Ingresa x1 y y1: ";
+    cin >> x1 >> y1;
+    cout << "Ingresa x2 y y2: ";
+    cin >> x2 >> y2;
+
+    double d = distancia(x1, y1, x2, y2);
+    cout << "La distancia es: " << d << "\n";
+}
+
+void ejercicio3() {
+    const int MAX = 50;
+    int N;
+
+    cout << "\n=== EJERCICIO 3: Notas de estudiantes ===\n";
+    cout << "Ingresa el numero de estudiantes (max 50): ";
+    cin >> N;
+
+    if (N <= 0 || N > MAX) {
+        cout << "N debe ser entre 1 y 50.\n";
+        return;
+    }
+
+    double notas[MAX];
+
+    for (int i = 0; i < N; i++) {
+        cout << "Nota del estudiante " << i + 1 << ": ";
+        cin >> notas[i];
+    }
+
+    double suma = 0;
+    double maxNota = -numeric_limits<double>::infinity();
+    double minNota = numeric_limits<double>::infinity();
+
+    for (int i = 0; i < N; i++) {
+        suma += notas[i];
+        if (notas[i] > maxNota) maxNota = notas[i];
+        if (notas[i] < minNota) minNota = notas[i];
+    }
+
+    double promedio = suma / N;
+
+    cout << "\nResultados:\n";
+    cout << "Promedio general: " << promedio << endl;
+    cout << "Nota mas alta: " << maxNota << endl;
+    cout << "Nota mas baja: " << minNota << endl;
+}
